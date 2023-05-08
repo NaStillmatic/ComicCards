@@ -70,7 +70,9 @@ extension Marvel: TargetType {
     let hash = (ts + Marvel.privateKey + Marvel.publicKey).md5
     
     // 2
-    let authParams = ["apikey": Marvel.publicKey, "ts": ts, "hash": hash]
+    let authParams = ["apikey": Marvel.publicKey,
+                      "ts": ts,
+                      "hash": hash]
     
     switch self {
     case .comics:

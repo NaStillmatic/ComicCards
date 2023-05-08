@@ -72,12 +72,10 @@ extension Imgur: TargetType {
     switch self {
     case .upload(let image):
       let imageData = image.jpegData(compressionQuality: 1.0)!
-      
       return .uploadMultipart([MultipartFormData(provider: .data(imageData),
                                                  name: "image",
-                                                fileName: "card.jpg",
-                                                mimeType: "image/jpg")])
-      
+                                                 fileName: "card.jpg",
+                                                 mimeType: "image/jpg")])
     case .delete:
       return .requestPlain
     }
